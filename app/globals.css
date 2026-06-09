@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ── Cigar Brand Tokens ── */
+@theme inline {
+  --color-green-deep:   #111A12;
+  --color-green-card:   #182019;
+  --color-green-raised: #1F2B20;
+  --color-green-border: #2A3B2C;
+  --color-gold:         #C4973A;
+  --color-gold-light:   #D9AE58;
+  --color-gold-dim:     #8A6820;
+  --color-cognac:       #9E6330;
+  --color-ivory:        #EDE5D0;
+  --color-ivory-dim:    #9A9182;
+
+  --font-display: var(--font-playfair);
+  --font-body:    var(--font-lato);
+
+  --animate-fade-up: fade-up 0.9s ease-out forwards;
+  --animate-fade-in: fade-in 1.2s ease-out forwards;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #111A12;
+  color: #EDE5D0;
+  font-family: var(--font-lato), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Subtle film grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px;
+}
