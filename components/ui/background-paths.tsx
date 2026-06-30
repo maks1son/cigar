@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -34,7 +33,7 @@ function FloatingPaths({ position }: { position: number }) {
               pathOffset: [0, 1, 0],
             }}
             transition={{
-              duration: 22 + Math.random() * 12,
+              duration: 22 + (path.id % 8) * 1.5,
               repeat: Number.POSITIVE_INFINITY,
               ease: "linear",
             }}

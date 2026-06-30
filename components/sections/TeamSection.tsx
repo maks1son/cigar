@@ -36,7 +36,7 @@ export default function TeamSection() {
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6">
-          {barbers.map((b, i) => (
+          {barbers.map((b) => (
             <div
               key={b.name}
               className="group bg-[#182019] border border-[#2A3B2C] hover:border-[#C4973A]/30 transition-all duration-500 overflow-hidden"

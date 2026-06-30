@@ -1,32 +1,31 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato } from "next/font/google";
+import { Manrope, Unbounded } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700", "800", "900"],
 });
 
-const lato = Lato({
-  variable: "--font-lato",
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "CIGAR — Barbershop",
+  title: "CIGAR | Барбершоп и сигарный клуб",
   description:
-    "Мужской барбершоп в традициях британского клуба. Точность, стиль, безупречность.",
+    "CIGAR, барбершоп и сигарный клуб: стрижки, бритье, уход за бородой, хьюмидор и приватная атмосфера.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${playfair.variable} ${lato.variable}`}>
-      <body className="min-h-screen bg-[#111A12]">{children}</body>
+    <html lang="ru" className={`${unbounded.variable} ${manrope.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

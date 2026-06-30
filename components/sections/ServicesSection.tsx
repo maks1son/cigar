@@ -54,7 +54,7 @@ export default function ServicesSection() {
 
         {/* Service rows */}
         <div className="divide-y divide-[#2A3B2C]">
-          {services.map((s, i) => (
+          {services.map((s) => (
             <div
               key={s.roman}
               className="group py-8 md:py-10 grid md:grid-cols-[80px_1fr_auto] gap-6 items-center hover:bg-[#182019] transition-colors duration-300 px-4 -mx-4 rounded-sm cursor-default"
