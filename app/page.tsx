@@ -1,16 +1,8 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
 const assetPath = (path: string) => `/cigar${path}`;
 
-const marqueeItems = [
-  "Стрижка",
-  "Опасная бритва",
-  "Борода",
-  "Хьюмидор",
-  "Кофе",
-  "Приватный зал",
-];
 
 const advantages = [
   {
@@ -116,18 +108,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="marquee-bar" aria-label="Услуги CIGAR">
-          <div className="marquee-track">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <div key={index} className="marquee-group">
-                {marqueeItems.map((item) => (
-                  <span key={`${index}-${item}`}>{item}</span>
-                ))}
-              </div>
-            ))}
           </div>
         </section>
 
@@ -317,3 +297,4 @@ export default function Home() {
     </>
   );
 }
+
